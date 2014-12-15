@@ -26,6 +26,10 @@ public class Global {
 
 	public void setApiUrl(String apiUrl) {
 		this.apiUrl = apiUrl;
+	}
+	
+	public void setApiUrlAndUpdateList(String apiUrl) {
+		this.apiUrl = apiUrl;
 		int selectedIndex = urlList.indexOf(apiUrl);
 		urlList.remove(selectedIndex);
 		urlList.add(0, apiUrl);
