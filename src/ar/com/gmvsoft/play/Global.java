@@ -4,14 +4,17 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import ar.com.gmvsoft.play.api.dto.ProductDTO;
+
 public class Global {
 
 	private static Global instance;
 
-	private List<String> urlList = new LinkedList<String>(Arrays.asList("http://localhost:9000",
-			"http://10.155.8.90:9000", "https://products-api.herokuapp.com"));
+	private List<String> urlList = new LinkedList<String>(Arrays.asList("https://products-api-gvolpe.herokuapp.com", 
+			"http://192.168.1.12:9000", "http://10.155.8.90:9000"));
 	private String apiUrl = "http://localhost:9000";
 	private Boolean shakeIt = Boolean.FALSE;
+	private List<ProductDTO> products;
 
 	private Global() {
 	}
@@ -44,6 +47,18 @@ public class Global {
 
 	public void setShakeIt(Boolean shakeIt) {
 		this.shakeIt = shakeIt;
+	}
+
+	public List<ProductDTO> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<ProductDTO> products) {
+		this.products = products;
+	}
+	
+	public Boolean existProducts() {
+		return products != null;
 	}
 
 }
