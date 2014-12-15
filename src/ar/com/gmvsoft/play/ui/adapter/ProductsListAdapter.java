@@ -32,13 +32,13 @@ public class ProductsListAdapter extends ArrayAdapter<ProductDTO> {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View rowView = inflater.inflate(R.layout.products_lists_row, parent, false);
 
-		ImageView placeIcon = (ImageView) rowView.findViewById(R.id.productRowIcon);
+		ImageView productIcon = (ImageView) rowView.findViewById(R.id.productRowIcon);
 		TextView productNameView = (TextView) rowView.findViewById(R.id.firstLine);
 		TextView productDescriptionView = (TextView) rowView.findViewById(R.id.secondLine);
 		TextView productPriceView = (TextView) rowView.findViewById(R.id.price);
 
-		placeIcon.setImageResource(R.drawable.ic_launcher);
-		productDescriptionView.setText("Play! Framework API");
+		productIcon.setImageResource(R.drawable.ic_launcher);
+		productDescriptionView.setText("Product Id: " + product.getId());
 		String productName = product.getName();
 		if (productName.length() > 26) {
 			productName = productName.substring(0, 22);
