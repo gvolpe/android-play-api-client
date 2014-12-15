@@ -9,6 +9,7 @@ import org.androidannotations.annotations.rest.Rest;
 import org.androidannotations.api.rest.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 
+import ar.com.gmvsoft.play.api.dto.BaseProductDTO;
 import ar.com.gmvsoft.play.api.dto.ProductDTO;
 
 @Rest(converters = { MappingJackson2HttpMessageConverter.class })
@@ -22,7 +23,7 @@ public interface ProductsResource {
 	ProductDTO productById(Long id);
 
 	@Post("/products")
-	void addProduct(ProductDTO product);
+	void addProduct(BaseProductDTO product);
 
 	String getRootUrl();
 
