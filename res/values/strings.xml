@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Play! Client</string>
+    <string name="action_debug_options">Debug Options</string>
+    <string name="app_subtitle">API de Productos</string>
+
+</resources>
