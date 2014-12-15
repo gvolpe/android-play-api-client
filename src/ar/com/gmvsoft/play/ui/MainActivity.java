@@ -4,6 +4,7 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.OptionsMenu;
+import org.androidannotations.annotations.SystemService;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.rest.RestService;
 
@@ -11,12 +12,15 @@ import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import ar.com.gmvsoft.play.Global;
 import ar.com.gmvsoft.play.R;
 import ar.com.gmvsoft.play.api.ProductsResource;
+import ar.com.gmvsoft.play.hardware.ShakeSensorListener;
 import ar.com.gmvsoft.play.ui.adapter.ProductsTabsPagerAdapter;
 
 @EActivity(R.layout.activity_main)
@@ -30,13 +34,26 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	@ViewById
 	ViewPager pager;
 
+	@SystemService
+	SensorManager sensorManager;
+
 	@RestService
 	ProductsResource productsResource;
 
+	private ShakeSensorListener sensorListener;
+
 	@AfterViews
 	public void setUp() {
+		Global.instance().setShakeIt(true);
+		sensorListener = new ShakeSensorListener(this);
+		registerSensorListener();
 		createTabs();
 		productsResource.setRootUrl(Global.instance().getApiUrl());
+	}
+
+	private void registerSensorListener() {
+		sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+				SensorManager.SENSOR_DELAY_NORMAL);
 	}
 
 	private void createTabs() {
@@ -88,6 +105,18 @@ public class MainActivity extends FragmentActivity implements TabListener {
 			public void onPageScrollStateChanged(int arg0) {
 			}
 		});
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		registerSensorListener();
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		sensorManager.unregisterListener(sensorListener);
 	}
 
 }

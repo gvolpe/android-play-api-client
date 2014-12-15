@@ -22,6 +22,7 @@ public class DebugOptionsActivity extends Activity {
 
 	@AfterViews
 	void setUp() {
+		Global.instance().setShakeIt(false);
 		createSpinnerUrls();
 	}
 

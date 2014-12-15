@@ -18,6 +18,7 @@
         
         <activity
             android:name="ar.com.gmvsoft.play.ui.DebugOptionsActivity_"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +29,7 @@
         
         <activity
             android:name="ar.com.gmvsoft.play.ui.MainActivity_"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
         </activity>
         

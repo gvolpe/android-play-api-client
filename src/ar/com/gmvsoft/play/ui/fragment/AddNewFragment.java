@@ -1,18 +1,11 @@
 package ar.com.gmvsoft.play.ui.fragment;
 
-import android.os.Bundle;
+import org.androidannotations.annotations.EFragment;
+
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import ar.com.gmvsoft.play.R;
 
+@EFragment(R.layout.fragment_add_new)
 public class AddNewFragment extends Fragment {
-
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_add_new, container, false);
-		return rootView;
-	}
 
 }

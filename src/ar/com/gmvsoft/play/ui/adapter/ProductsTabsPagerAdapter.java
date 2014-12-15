@@ -3,9 +3,9 @@ package ar.com.gmvsoft.play.ui.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import ar.com.gmvsoft.play.ui.fragment.AddNewFragment;
-import ar.com.gmvsoft.play.ui.fragment.FindAllFragment;
-import ar.com.gmvsoft.play.ui.fragment.FindByIdFragment;
+import ar.com.gmvsoft.play.ui.fragment.AddNewFragment_;
+import ar.com.gmvsoft.play.ui.fragment.FindAllFragment_;
+import ar.com.gmvsoft.play.ui.fragment.FindByIdFragment_;
 
 public class ProductsTabsPagerAdapter extends FragmentPagerAdapter {
 
@@ -17,11 +17,11 @@ public class ProductsTabsPagerAdapter extends FragmentPagerAdapter {
 	public Fragment getItem(int index) {
 		switch (index) {
 		case 0:
-			return new FindAllFragment();
+			return new FindAllFragment_();
 		case 1:
-			return new FindByIdFragment();
+			return new FindByIdFragment_();
 		case 2:
-			return new AddNewFragment();
+			return new AddNewFragment_();
 		}
 		return null;
 	}

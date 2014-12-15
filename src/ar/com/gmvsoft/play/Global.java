@@ -11,6 +11,7 @@ public class Global {
 	private List<String> urlList = new LinkedList<String>(Arrays.asList("http://localhost:9000",
 			"http://10.155.8.90:9000", "https://products-api.herokuapp.com"));
 	private String apiUrl = "http://localhost:9000";
+	private Boolean shakeIt = Boolean.FALSE;
 
 	private Global() {
 	}
@@ -35,6 +36,14 @@ public class Global {
 
 	public List<String> getUrlList() {
 		return urlList;
+	}
+
+	public Boolean getShakeIt() {
+		return shakeIt;
+	}
+
+	public void setShakeIt(Boolean shakeIt) {
+		this.shakeIt = shakeIt;
 	}
 
 }
