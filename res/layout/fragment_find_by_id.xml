@@ -1,15 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#ff8400" >
-     
-    <TextView android:layout_width="fill_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <ListView
+        android:id="@+id/productByIdListView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/txtFindById"
+        android:layout_above="@+id/btnFindById" > 
+    </ListView>
+
+    <Button
+        android:id="@+id/btnFindById"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Find By Id"
-        android:textSize="20dp"
-        android:layout_centerInParent="true"/>
- 
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Make Request" />
+
+    <TextView
+        android:id="@+id/lblId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtFindById"
+        android:layout_alignBottom="@+id/txtFindById"
+        android:layout_toLeftOf="@+id/txtFindById"
+        android:text="ID: " />
+
+    <EditText
+        android:id="@+id/txtFindById"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="36dp"
+        android:ems="10"
+        android:inputType="number" />
+
 </RelativeLayout>

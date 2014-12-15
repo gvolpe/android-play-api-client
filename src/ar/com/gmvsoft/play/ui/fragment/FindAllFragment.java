@@ -46,10 +46,8 @@ public class FindAllFragment extends Fragment {
 
 	@Background
 	void findProductsInBackground() {
-		List<ProductDTO> products = Global.instance().getProducts();
-
-		if (products == null) {
-			products = productsResource.products();
+		if (!Global.instance().existProducts()) {
+			List<ProductDTO> products = productsResource.products();
 			Global.instance().setProducts(products);
 		}
 

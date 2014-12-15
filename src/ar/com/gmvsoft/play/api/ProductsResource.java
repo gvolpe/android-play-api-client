@@ -18,7 +18,7 @@ public interface ProductsResource {
 	@Get("/products")
 	List<ProductDTO> products();
 
-	@Get("/product/{id}")
+	@Get("/products/{id}")
 	ProductDTO productById(Long id);
 
 	@Post("/products")

@@ -15,6 +15,7 @@ public class Global {
 	private String apiUrl = "http://localhost:9000";
 	private Boolean shakeIt = Boolean.FALSE;
 	private List<ProductDTO> products;
+	private ProductDTO productById;
 
 	private Global() {
 	}
@@ -61,4 +62,16 @@ public class Global {
 		return products != null;
 	}
 
+	public ProductDTO getProductById() {
+		return productById;
+	}
+
+	public void setProductById(ProductDTO productById) {
+		this.productById = productById;
+	}
+	
+	public Boolean existProductById() {
+		return productById != null;
+	}
+	
 }
